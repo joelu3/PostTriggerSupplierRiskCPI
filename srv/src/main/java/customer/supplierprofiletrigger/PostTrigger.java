@@ -48,7 +48,7 @@ public class PostTrigger {
         MediaType JSON = MediaType.get("application/json; charset=utf-8");
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
-            .header("Authorization", "Basic UDIwMDE4MDQ0MDA6ZHVqZ3k0LW1lZ2R1ZC1mYWpXYWc=")
+            .header("Authorization", "Basic x")
             .url(url)
             .post(body)
             .build();
@@ -65,7 +65,7 @@ public class PostTrigger {
             conn.setDoOutput(true);
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "text/plain");
-            conn.setRequestProperty("Authorization", "Basic UDIwMDE4MDQ0MDA6ZHVqZ3k0LW1lZ2R1ZC1mYWpXYWc=");
+            conn.setRequestProperty("Authorization", "Basic x");
              OutputStream os = conn.getOutputStream();
             os.write(json.getBytes());
             os.flush();
@@ -89,7 +89,7 @@ public class PostTrigger {
             //Unirest 
             com.mashape.unirest.http.HttpResponse<JsonNode> response = (HttpResponse)Unirest.post(url)
                 .header("accept", "application/json")
-                .basicAuth("P2001804400","dujgy4-megdud-fajWag");
+                .basicAuth("username","password");
                 .field("parameter", "value")
                 .field("firstname", "Gary")
                 .asJson();
